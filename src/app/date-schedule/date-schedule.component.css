@@ -1,0 +1,107 @@
+button{
+    background-color: orange;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    height: 40px;
+    width: 105px;
+    
+}
+
+.container{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.heading{
+    margin: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.not-found{
+    margin: 1rem;
+}
+
+.row-1{
+    margin: 1rem;
+    display: flex;
+    align-items: center; 
+    padding: 0.3rem 0;
+    
+}
+
+
+.dateSchedule{
+    margin-left: 1rem;
+    height: 1.6rem;
+    border-radius: 0.2rem;
+    border: none;
+   
+}
+
+
+.fileimport{
+    width: 12.2vw;
+}
+
+.import{
+    margin-top: 2rem;
+    background-color: #141414;
+    padding: 1rem;
+    border-radius: 1.2rem;
+}
+
+
+
+/* table css */
+
+.containTable{
+    margin-top: 2rem;
+    border-radius: 1.2rem;
+    background-color:#141414;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 55vh;
+    
+}
+
+.table{
+    width: 100%;
+}
+
+
+.table td{
+    text-align: center;
+    padding: 1.3rem;
+    border-bottom:solid 1px#232323;
+    
+}
+
+
+
+th{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: #232323;
+    text-align: center;
+    padding: 1.3rem;
+    border-bottom:solid 1px#232323;
+}
+
+.colFilter{
+    width: 70%;
+    height: 2vh;
+    margin-top: 0.4rem;
+    background-color: #5a5a5a;
+    color: aliceblue;
+    border: none;
+}
+
+.searchBox{
+    width: 70%;
+    margin-top: 0.3rem;
+}

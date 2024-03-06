@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="title">
+        <h1>
+            Setup - Date Schedule
+        </h1>
+    </div>
+
+    <hr>
+
+    <div class="import">
+        <div class="heading">
+            Date Schedule
+        </div>
+
+        <div class="not-found" style="color: red;" *ngIf="noDataFound">No Data found!</div>
+        <div class="not-found" style="color: red;" *ngIf="dateNotSelected">Please select a date!</div>
+
+        
+
+        <div class="row-1">Schedule Date 
+            <input type="date" name="dateSchedule" id="dateSchedule" class="dateSchedule" [(ngModel)]="selectedDate" (change)="onDateChange()">
+            <button class="load" (click)="onLoad()">Load</button>
+        </div>
+
+        <div class="row-1"> 
+            <input type="file" name="fileimport" id="fileimport" class="fileimport" accept=".xls, .xlsx" (change)="onFileSelected($event)">
+            <button class="load" (click)="onImport()">Import</button>
+        </div>
+
+
+    </div>
+
+    <div class="containTable">
+        <table id="table" class="table">
+            <thead class="header">
+                <tr>
+                    <!-- <th *ngFor="let header of theads">{{header}}  <input type="text" class="colFilter"></th> -->
+                    <th>Frequency Type<input type="text" [(ngModel)]="searchData.Freq_Type" (change)="filterData()" class="searchBox"></th>
+                    <th>Country<input type="text" [(ngModel)]="searchData.Country" (change)="filterData()" class="searchBox"></th>
+                    <th>Counter Party<input type="text" [(ngModel)]="searchData.CounterParty" (change)="filterData()" class="searchBox"></th>
+                    <th>Trade Date<input type="text" [(ngModel)]="searchData.TradeDate" (change)="filterData()" class="searchBox"></th>
+                    <th>Tenor<input type="text" [(ngModel)]="searchData.Tenor" (change)="filterData()" class="searchBox"></th> 
+                    <th>Start Days<input type="text" [(ngModel)]="searchData.StartDays" (change)="filterData()" class="searchBox"></th>
+                    <th>Settlement Cycle<input type="text" [(ngModel)]="searchData.SettlementCycle" (change)="filterData()" class="searchBox"></th>
+                    <th>Period Start<input type="text" [(ngModel)]="searchData.Period_Start" (change)="filterData()" class="searchBox"></th>
+                    <th>Period End<input type="text" [(ngModel)]="searchData.Period_End" (change)="filterData()" class="searchBox"></th>
+                    <th>Period Settle<input type="text" [(ngModel)]="searchData.Period_Settle" (change)="filterData()" class="searchBox"></th>
+                    <th>Exch B Days<input type="text" [(ngModel)]="searchData.Exch_B_Days" (change)="filterData()" class="searchBox"></th>
+                </tr>
+            </thead>
+            
+                
+            
+            <tbody >
+                <tr *ngFor="let row of filteredData" >
+                    
+
+                    <td>{{row.Freq_Type}}</td>
+                    <td>{{row.Country}}</td>
+                    <td>{{row.CounterParty}}</td>
+                    <td>{{row.TradeDate}}</td>
+                    <td>{{row.Tenor}}</td>
+                    <td>{{row.StartDays}}</td>
+                    <td>{{row.SettlementCycle}}</td>
+                    <td>{{row.Period_Start}}</td>
+                    <td>{{row.Period_End}}</td>
+                    <td>{{row.Period_Settle}}</td>
+                    <td>{{row.Exch_B_Days}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <p *ngIf="noRecords" style="color: red; padding-left: 1rem;"  >No records to display.</p>
+        </div>
+    </div>  
+
+</div>
+
+
+
